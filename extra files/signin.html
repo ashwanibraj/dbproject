@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    {% load staticfiles %}
+    <!-- Bootstrap -->  
+    <link rel="stylesheet" href="{% static "bootstrap/css/bootstrap.css" %}" type="text/css" />
+    <title>SignIn - myDBproject.com</title>    
+  </head>
+  <body>
+    <h1>Hello, world!</h1>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static "finapp/style.css" %}" type="text/css" />
+<style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+
+      @media (max-width: 980px) {
+        /* Enable use of floated navbar text */
+        .navbar-text.pull-right {
+          float: none;
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+      }
+<title>SignIn - myDBproject.com</title>
+</head>
+<body>
+<div id="wrap">
+  <div id="header">
+    <h1 id="logo">myDBproject.com</h1>  
+    <div id="menu">
+      <ul>
+        <li><a href="/finapp/aboutus/">About Us</a></li>
+        <li><a href="/finapp/signup/">Sign Up</a></li>
+        <li id="current"><a href="/finapp/">Sign-in</a></li>
+      </ul>
+    </div>  
+  </div>
+  
+    
+      <div class="box">
+        <div class='center-align'>        
+        <form action="/finapp/" method="post"> {% csrf_token %}
+          <br>{% load crispy_forms_tags %}
+          {% crispy form %}
+          {{ msg }}
+          <br>
+          <p class="forgot"> <a href="signupin.htm?type=forgot_pass" id="forgot_password_link" title="Forgot your password? Click here!"  >Forgot your password?</a></p>
+        </form>        
+        <br><br><br><br>
+      </div>
+      
+    
+    <br>
+  </div>
+</div>
+<div id="footer-wrap">
+  <div class="footer-left">
+    <p class="align-left"> &copy; 2015 <strong>myDBproject.com</strong> | All rights reserved
+  </div>
+  <div class="footer-right">
+    <p class="align-right"> <a href="/finapp/">Home</a>&nbsp;|&nbsp; <a href="/finapp/aboutus/">About Us</a>&nbsp;</p>
+  </div>
+</div>
+</body>
+</html>

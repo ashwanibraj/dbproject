@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    {% load staticfiles %}
+    <!-- Bootstrap -->  
+    <link rel="stylesheet" href="{% static "bootstrap/css/bootstrap.css" %}" type="text/css" />
+    <title>SignUp - myDBproject.com</title>    
+    <style type="text/css">
+      body {                
+        padding-top: 60px;
+        padding-bottom: 20px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+      .body-padding {
+        padding-left: 300px;
+      }
+
+      @media (max-width: 900px) {
+        /* Enable use of floated navbar text */
+        .navbar-text.pull-right {
+          float: none;
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+      }
+      #footer-wrap a { 
+        text-decoration: none; 
+        font-weight: bold;  
+        color: #FFF;
+      }
+      #footer-wrap .footer-left{
+        float: left;
+        width: 65%; 
+        padding-bottom: 20px; 
+      }
+      #footer-wrap .footer-right{
+        float: right;
+        width: 30%;     
+        padding-bottom: 20px;
+      }
+    </style>
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="../assets/ico/favicon.png">      
+<title>Signup - myDBproject.com</title>
+</head>
+<body>
+  
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          
+          <a class="brand" href="#">myDBproject.com</a>
+          <div class="nav-collapse collapse">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <ul class="nav">
+              <li><a href="/finapp/">Sign In</a></li>
+              <li class="active"><a href="/finapp/signup/">Sign Up</a></li>              
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>  
+    
+    <div class="body-padding">
+    <div class="span9">
+      <div class="hero-unit">
+        <div class="text-center">     
+        {{ msg }}          
+        <form action="/finapp/signup/" method="post"> {% csrf_token %}
+          <br>{% load crispy_forms_tags %}
+          {% crispy form %}          
+        </form>                
+        </div>
+      </div>
+        <div id="footer-wrap">      
+        <div class="footer-left">
+          <p class="text-left"> &copy; 2015 <strong>myDBproject.com</strong> | All rights reserved</p>
+        </div>
+      </div>
+</body>
+</html>
