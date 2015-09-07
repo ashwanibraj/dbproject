@@ -9,6 +9,7 @@ Pre-requisites:
 2) Must have python, Django installed
 
 To run:
+
 1) Download and open Cisco AnyConnect. Enter Gatorlink username and password to connect to Gatorlink VPN.
 
 2) Open SQL Developer and connect to the UF Database server.
